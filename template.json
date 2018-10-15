@@ -1,4 +1,4 @@
- [
+[
   {
     "type": 1,
     "title": "Registry",
@@ -12,19 +12,6 @@
     ],
     "volumes": [{ "container": "/var/lib/registry"}]
   },
-  {
-    "type": "1",
-    "title": "PHP",
-    "description": "PHP-Apache",
-    "platform": "linux",
-    "categories": ["webserver"],
-    "logo": "https://cloudinovasi.id/assets/img/logos/nginx.png",
-    "image": "kerncore/php-apa:9.0a",
-    "ports": [
-      "8090:8090/tcp"
-    ],
-    "volumes": [{"container": "/var/www/sites/doska"}]
-  },     
   {
     "type": 1,
     "title": "Nginx",
