@@ -2,29 +2,28 @@ version: '2'
 
 services:
   proxy:
-    build: nginx/
-    container_name: "portainer-proxy"
+    image: nginx:latest
+    container_name: "proxy"
     ports:
-      - "80:80"
+        - "8080:80"
     networks:
       - local
 
-  templates:
-    image: portainer/templates
+  php:
+    image: php:7-fpm
     container_name: "portainer-templates"
     networks:
       - local
 
-  portainer:
-    image: portainer/portainer
-    container_name: "portainer-app"
-#Automatically choose 'Manage the Docker instance where Portainer is running' by adding <--host=unix:///var/run/docker.sock> to the command
-    command: --templates http://templates/templates.json
-    networks:
-      - local
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /opt/portainer/data:/data
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    ports:
+        - "8080:80"
+    environment:
+        - PMA_ARBITRARY=1
+        - PMA_HOST=${MYSQL_HOST}
+    restart: always
 
 networks:
   local:
