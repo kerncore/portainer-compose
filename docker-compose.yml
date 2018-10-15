@@ -11,7 +11,7 @@ services:
 
   php:
     image: php:7-fpm
-    container_name: "portainer-templates"
+    container_name: "php7"
     networks:
       - local
 
