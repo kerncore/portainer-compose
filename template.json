@@ -1,10 +1,79 @@
-{
-  "type": 1,
-  "title": "PHP",
-  "description": "PHP-Apache",
-  "logo": "https://cloudinovasi.id/assets/img/logos/nginx.png",
-  "image": "kerncore/php-apa:9.0a",
-  "ports": [
-    "8090:8090/tcp"
-  ]
-}
+[
+  {
+    "type": "container",
+    "title": "PHP",
+    "description": "PHP-Apache",
+    "logo": "https://cloudinovasi.id/assets/img/logos/nginx.png",
+    "image": "kerncore/php-apa:9.0a",
+    "ports": [
+      "8090:8090/tcp"
+    ]
+  },
+  {
+    "type": "container",
+    "title": "Nginx",
+    "description": "High performance web server",
+    "categories": ["webserver"],
+    "platform": "linux",
+    "logo": "https://portainer.io/images/logos/nginx.png",
+    "image": "nginx:latest",
+    "ports": [
+      "80/tcp",
+      "443/tcp"
+    ],
+    "volumes": ["/etc/nginx", "/usr/share/nginx/html"]
+  },
+  {
+    "type": "container",
+    "title": "MySQL",
+    "description": "The most popular open-source database",
+    "categories": ["database"],
+    "platform": "linux",
+    "logo": "https://portainer.io/images/logos/mysql.png",
+    "image": "mysql:latest",
+    "env": [
+      {
+        "name": "MYSQL_ROOT_PASSWORD",
+        "label": "Root password"
+      }
+    ],
+    "ports": [
+      "3306/tcp"
+    ],
+    "volumes": ["/var/lib/mysql"]
+  },
+  {
+    "type": "container",
+    "title": "MariaDB",
+    "description": "Performance beyond MySQL",
+    "categories": ["database"],
+    "platform": "linux",
+    "logo": "https://portainer.io/images/logos/mariadb.png",
+    "image": "mariadb:latest",
+    "env": [
+      {
+        "name": "MYSQL_ROOT_PASSWORD",
+        "label": "Root password"
+      }
+    ],
+    "ports": [
+      "3306/tcp"
+    ],
+    "volumes": ["/var/lib/mysql"]
+  },
+  {
+    "type": "container",
+    "title": "File browser",
+    "description": "A web file manager",
+    "note": "Default credentials: admin/admin",
+    "categories": ["filesystem", "storage"],
+    "platform": "linux",
+    "logo": "https://portainer.io/images/logos/filebrowser.png",
+    "image": "hacdias/filemanager:latest",
+    "ports": [
+      "80/tcp"
+    ],
+    "volumes": ["/data", "/srv"],
+    "command": "--port 80 --database /data/database.db --scope /srv"
+  }
+]
