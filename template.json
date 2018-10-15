@@ -75,5 +75,33 @@
     ],
     "volumes": ["/data", "/srv"],
     "command": "--port 80 --database /data/database.db --scope /srv"
+  },
+  {
+    "title": "Sematext Docker Agent",
+    "type": "stack",
+    "categories": ["Log Management", "Monitoring"],
+    "description": "Collect logs, metrics and docker events",
+    "logo": "https://portainer.io/images/logos/sematext_agent.png",
+    "platform": "linux",
+    "repository": {
+      "url": "https://github.com/portainer/templates",
+      "stackfile": "stacks/sematext-agent-docker/docker-stack.yml"
+    },
+    "env": [
+      {
+        "name": "LOGSENE_TOKEN",
+        "label": "Logs token"
+      },
+      {
+        "name": "SPM_TOKEN",
+        "label": "SPM monitoring token"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/var/run/docker.sock",
+        "bind": "/var/run/docker.sock"
+      }
+    ]
   }
 ]
