@@ -21,7 +21,7 @@
     "logo": "https://cloudinovasi.id/assets/img/logos/nginx.png",
     "image": "kerncore/php-apa:9.0a",
     "ports": [
-      "8090:8090/tcp"
+      "8090/tcp"
     ],
     "volumes": [{"container": "/var/www/sites/doska"}]
   }, 
