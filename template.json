@@ -18,7 +18,7 @@
     "description": "PHP Apache Doska",
     "platform": "linux",
     "categories": ["webserver"],
-    "logo": "https://cloudinovasi.id/assets/img/logos/nginx.png",
+    "logo": "https://is4-ssl.mzstatic.com/image/thumb/Purple6/v4/1e/82/48/1e8248ec-f0ec-885a-d93b-07d111a1c2af/mzl.gdmnxkrj.png/600x600wa.png",
     "image": "kerncore/php-apa:9.0a",
     "ports": [
       "8090/tcp"
