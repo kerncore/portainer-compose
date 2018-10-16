@@ -14,8 +14,8 @@
   },
   {
     "type": 1,
-    "title": "PHP56",
-    "description": "PHP Apache Doska",
+    "title": "Doska stack",
+    "description": "PHP-5.6 Apache Doska",
     "platform": "linux",
     "categories": ["webserver"],
     "logo": "https://is4-ssl.mzstatic.com/image/thumb/Purple6/v4/1e/82/48/1e8248ec-f0ec-885a-d93b-07d111a1c2af/mzl.gdmnxkrj.png/600x600wa.png",
