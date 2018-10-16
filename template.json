@@ -13,7 +13,7 @@
     "volumes": [{ "container": "/var/lib/registry"}]
   },
   {
-    "type": "1",
+    "type": 1,
     "title": "PHP56",
     "description": "PHP Apache Doska",
     "platform": "linux",
